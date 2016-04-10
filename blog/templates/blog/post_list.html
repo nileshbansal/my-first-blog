@@ -7,12 +7,16 @@
 
 	<body>
 		<div>
-			<h1>Test Blog</h1>
+			<h1><a href="/">test site</a></h1>
 		</div>
 		<div>
-			<p>published: 04.10.2016, 10.27</p>
-			<h2><a href="">My first post</a></h2>
-			<h3>For the term project</h3>
+			{% for post in posts %}
+			<div>
+				<p>published: {{ post.published_date }}</p>
+				<h1><a href="">{{ post.title }}</a></h1>
+				<p>{{ post.text|linebreaks }}</p>
+			</div>
+			{% endfor %}
 		</div>
 	</body>
 
